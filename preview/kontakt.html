@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt | Sudecka Wataha (podgląd)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/theme.css">
+</head>
+<body class="sudecka-wataha">
+
+<header class="sw-nav fixed top-0 left-0 right-0 z-50">
+    <div class="sw-nav__bar">
+        <div class="sw-nav__inner max-w-7xl mx-auto flex items-center justify-between gap-4 px-4 lg:px-8 py-3 min-h-[3.5rem]">
+            <a href="index.html" class="sw-nav__brand shrink-0 no-underline group">
+                <img src="assets/images/logo-sudecka-wataha.png" alt="Strzelecki Klub Sportowy Sudecka Wataha" class="sw-nav__brand-logo" width="768" height="768" decoding="async">
+            </a>
+            <div class="hidden lg:flex items-center gap-0.5 xl:gap-1" role="navigation" aria-label="Menu główne">
+                <a href="index.html" class="sw-nav-link">Start</a>
+                <a href="o-nas.html" class="sw-nav-link">O nas</a>
+                <div class="sw-nav__dropdown">
+                    <button type="button" class="sw-nav__dropdown-trigger sw-nav-link" aria-expanded="false" aria-haspopup="true" aria-controls="sw-desktop-submenu">
+                        <span>Formalności</span>
+                        <svg class="sw-nav__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" aria-hidden="true"><path d="M3 4.5L6 7.5L9 4.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <div class="sw-nav__dropdown-panel" id="sw-desktop-submenu" role="menu">
+                        <a role="menuitem" href="jak-zostac-czlonkiem.html" class="sw-nav__dropdown-link">Jak zostać członkiem?</a>
+<a role="menuitem" href="patent-strzelecki.html" class="sw-nav__dropdown-link">Patent strzelecki</a>
+<a role="menuitem" href="licencja-sportowa.html" class="sw-nav__dropdown-link">Licencja sportowa</a>
+<a role="menuitem" href="pozwolenie-na-bron.html" class="sw-nav__dropdown-link">Pozwolenie na broń</a>
+                    </div>
+                </div>
+                <a href="kontakt.html" class="sw-nav-link sw-nav-link--active">Kontakt</a>
+            </div>
+            <button type="button" class="mobile-nav-toggle lg:hidden" aria-expanded="false" aria-controls="sw-mobile-nav">Menu</button>
+        </div>
+        <div id="sw-mobile-nav" class="mobile-nav-panel lg:hidden border-t border-white/10">
+            <div class="max-w-7xl mx-auto px-4 py-2 pb-4">
+                <a href="index.html" class="mobile-nav-panel__link">Start</a>
+                <a href="o-nas.html" class="mobile-nav-panel__link">O nas</a>
+                <details class="mobile-nav-details">
+                    <summary class="mobile-nav-details__summary">Formalności i procedury</summary>
+                    <div class="mobile-nav-details__links">
+                        <a href="jak-zostac-czlonkiem.html" class="mobile-nav-panel__link mobile-nav-panel__link--sub">Jak zostać członkiem?</a>
+<a href="patent-strzelecki.html" class="mobile-nav-panel__link mobile-nav-panel__link--sub">Patent strzelecki</a>
+<a href="licencja-sportowa.html" class="mobile-nav-panel__link mobile-nav-panel__link--sub">Licencja sportowa</a>
+<a href="pozwolenie-na-bron.html" class="mobile-nav-panel__link mobile-nav-panel__link--sub">Pozwolenie na broń</a>
+                    </div>
+                </details>
+                <a href="kontakt.html" class="mobile-nav-panel__link mobile-nav-panel__link--active">Kontakt</a>
+            </div>
+        </div>
+    </div>
+</header>
+<main class="sw-page-shell pt-28 pb-20 px-4"><article class="sw-article prose-page page-inner">
+    <header class="sw-page-head">
+        <div class="sw-page-head__text">
+            <p class="sw-eyebrow">Kontakt</p>
+            <h1 class="page-title font-serif">Kontakt</h1>
+            <p class="sw-lead">Napisz — odpowiadamy członkom i kandydatom.</p>
+        </div>
+        <figure class="sw-media sw-media--landscape sw-page-head__media" aria-label="Miejsce na zdjęcie">
+            <div class="sw-media__frame">
+                <span class="sw-media__glyph" aria-hidden="true"></span>
+                <span class="sw-media__hint">Miejsce na zdjęcie</span>
+                <span class="sw-media__sub"> np. siedziba, strzelnica, spotkanie.</span>
+            </div>
+        </figure>
+    </header>
+    <section class="sw-section">
+        <h2>Napisz do nas</h2>
+        <p class="sw-contact-form__notice sw-contact-form__notice--success" style="opacity:.88">Podgląd statyczny — na stronie WordPress formularz wysyła wiadomości e-mail.</p>
+        <p class="sw-contact-form__intro">Wypełnij formularz — w wdrożeniu trafi do skrzynki klubu. Możesz też napisać bezpośrednio:
+            <a href="mailto:sudeckawataha@gmail.com">sudeckawataha@gmail.com</a>
+        </p>
+        <form class="sw-contact-form" action="#" method="get" onsubmit="return false;">
+            <div class="sw-contact-form__grid">
+                <p class="sw-contact-form__field">
+                    <label class="sw-contact-form__label" for="pv-name">Imię i nazwisko <span class="sw-contact-form__req">*</span></label>
+                    <input class="sw-contact-form__input" type="text" id="pv-name" name="pv_name" autocomplete="name">
+                </p>
+                <p class="sw-contact-form__field">
+                    <label class="sw-contact-form__label" for="pv-email">E-mail <span class="sw-contact-form__req">*</span></label>
+                    <input class="sw-contact-form__input" type="email" id="pv-email" name="pv_email" autocomplete="email">
+                </p>
+            </div>
+            <p class="sw-contact-form__field">
+                <label class="sw-contact-form__label" for="pv-subject">Temat (opcjonalnie)</label>
+                <input class="sw-contact-form__input" type="text" id="pv-subject" name="pv_subject">
+            </p>
+            <p class="sw-contact-form__field">
+                <label class="sw-contact-form__label" for="pv-message">Wiadomość <span class="sw-contact-form__req">*</span></label>
+                <textarea class="sw-contact-form__textarea" id="pv-message" name="pv_message" rows="6"></textarea>
+            </p>
+            <p class="sw-contact-form__actions">
+                <button type="button" class="sw-contact-form__submit" title="Aktywne po wdrożeniu WordPressa">Wyślij wiadomość</button>
+            </p>
+        </form>
+    </section>
+    <section class="sw-section sw-section--accent">
+        <h2>Dane do wpłat</h2>
+        <div class="sw-callout">
+            <p class="m-0">
+                <strong class="text-stone-700">Stowarzyszenie Strzelecki Klub Sportowy „Sudecka Wataha”</strong><br>
+                Nr konta w PKO Bank Polski:
+                <span class="text-stone-700">39 1020 5112 0000 7002 0440 5098</span>
+            </p>
+        </div>
+        <p>w tytule wpłaty prosimy zamieścić: imię i nazwisko osoby wpłacającej oraz za co jest realizowana np. „…składka za rok 2022…”.</p>
+    </section>
+
+    <section class="sw-map-section section-padding px-4" aria-label="Lokalizacja na mapie">
+        <div class="max-w-5xl mx-auto">
+            <header class="sw-map-section__head text-center mb-9 lg:mb-11 reveal">
+                <p class="pack-grid-section__overline">Lokalizacja</p>
+                <div class="pack-grid-section__rule" aria-hidden="true"><span class="pack-grid-section__rule-line"></span><span class="pack-grid-section__rule-mark">◆</span><span class="pack-grid-section__rule-line"></span></div>
+                <h2 class="sw-map-section__title font-serif">Strzelnica Sudecka</h2>
+                <p class="sw-map-section__lead max-w-2xl mx-auto">Kolonia 11, 57-500 Bystrzyca Kłodzka, Polska</p>
+            </header>
+            <div class="sw-map-frame reveal">
+                <iframe src="https://www.google.com/maps?q=50.2868605%2C16.6288946&amp;z=17&amp;output=embed&amp;hl=pl" title="Mapa Google — Strzelnica Sudecka" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+            </div>
+            <p class="sw-map-section__link-wrap text-center mt-5 mb-0">
+                <a class="sw-map-section__link" href="https://maps.app.goo.gl/Ap4T4yaKguwpusWY6" target="_blank" rel="noopener noreferrer">Otwórz w Google Maps<span aria-hidden="true"> ↗</span></a>
+            </p>
+        </div>
+    </section>
+
+</article></main>
+<footer class="site-footer border-t py-20 text-center mt-0">
+    <a href="index.html" class="site-footer__logo-link">
+        <img src="assets/images/logo-sudecka-wataha.png" alt="Strzelecki Klub Sportowy Sudecka Wataha" class="site-footer__logo" width="768" height="768" decoding="async">
+    </a>
+    <div class="site-footer__legal">
+        <p class="site-footer__krs font-serif">KRS 0000634605</p>
+        <p class="site-footer__krs-desc">Zarejestrowani w KRS jako Stowarzyszenie Strzelecki Klub Sportowy Sudecka Wataha — Sąd Rejonowy we Wrocławiu.</p>
+    </div>
+    <p class="site-footer__note text-xs tracking-widest uppercase mb-4">© 2026 · Strzelecki Klub Sportowy Sudecka Wataha · podgląd statyczny</p>
+    <div class="flex flex-wrap justify-center gap-4 md:gap-6 px-4 text-sm">
+        <a href="o-nas.html">O nas</a>
+        <a href="kontakt.html">Kontakt</a>
+    </div>
+</footer>
+<script src="assets/js/theme.js"></script>
+</body>
+</html>

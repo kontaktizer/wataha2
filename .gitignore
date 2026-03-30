@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Build output (regenerated via npm run build)
+sudecka-wataha/assets/css/theme.css
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Environment
+.env
+.env.*
+
+# WordPress uploads & runtime
+wp-content/uploads/
+wp-content/upgrade/
+
+# Docker persistent data
+db_data/
+wp_data/
+
+# Logs
+*.log
+npm-debug.log*

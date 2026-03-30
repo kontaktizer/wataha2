@@ -1,0 +1,34 @@
+# Lokalny podgląd motywu WordPress: w katalogu projektu uruchom `docker compose up -d`,
+# wejdź na http://localhost:8080, dokończ instalację WP, aktywuj motyw „Sudecka Wataha”
+# i utwórz strony ze slugami: o-nas, jak-zostac-czlonkiem, patent-strzelecki,
+# licencja-sportowa, pozwolenie-na-bron, kontakt. Ustaw stronę główną jako statyczną.
+
+services:
+  db:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+      MYSQL_ROOT_PASSWORD: rootpassword
+    volumes:
+      - db_data:/var/lib/mysql
+
+  wordpress:
+    image: wordpress:latest
+    restart: unless-stopped
+    ports:
+      - '8080:80'
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+    volumes:
+      - ./sudecka-wataha:/var/www/html/wp-content/themes/sudecka-wataha
+    depends_on:
+      - db
+
+volumes:
+  db_data:

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalendarz | Sudecka Wataha (podgląd)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/theme.css">
+</head>
+<body class="sudecka-wataha">
+
+<header class="sw-nav fixed top-0 left-0 right-0 z-50">
+    <div class="sw-nav__bar">
+        <div class="sw-nav__inner max-w-7xl mx-auto flex items-center justify-between gap-4 px-4 lg:px-8 py-3 min-h-[3.5rem]">
+            <a href="index.html" class="sw-nav__brand shrink-0 no-underline group">
+                <img src="assets/images/logo-sudecka-wataha.png" alt="Strzelecki Klub Sportowy Sudecka Wataha" class="sw-nav__brand-logo" width="768" height="768" decoding="async">
+            </a>
+            <div class="hidden lg:flex items-center gap-0.5 xl:gap-1" role="navigation" aria-label="Menu główne">
+                <a href="index.html" class="sw-nav-link">Start</a>
+                <a href="o-nas.html" class="sw-nav-link">O nas</a>
+                <div class="sw-nav__dropdown">
+                    <button type="button" class="sw-nav__dropdown-trigger sw-nav-link" aria-expanded="false" aria-haspopup="true" aria-controls="sw-desktop-submenu">
+                        <span>Formalności</span>
+                        <svg class="sw-nav__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" aria-hidden="true"><path d="M3 4.5L6 7.5L9 4.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <div class="sw-nav__dropdown-panel" id="sw-desktop-submenu" role="menu">
+                        <a role="menuitem" href="jak-zostac-czlonkiem.html" class="sw-nav__dropdown-link">Jak zostać członkiem?</a>
+<a role="menuitem" href="patent-strzelecki.html" class="sw-nav__dropdown-link">Patent strzelecki</a>
+<a role="menuitem" href="licencja-sportowa.html" class="sw-nav__dropdown-link">Licencja sportowa</a>
+<a role="menuitem" href="pozwolenie-na-bron.html" class="sw-nav__dropdown-link">Pozwolenie na broń</a>
+                    </div>
+                </div>
+                <a href="kontakt.html" class="sw-nav-link">Kontakt</a>
+            </div>
+            <button type="button" class="mobile-nav-toggle lg:hidden" aria-expanded="false" aria-controls="sw-mobile-nav">Menu</button>
+        </div>
+        <div id="sw-mobile-nav" class="mobile-nav-panel lg:hidden border-t border-white/10">
+            <div class="max-w-7xl mx-auto px-4 py-2 pb-4">
+                <a href="index.html" class="mobile-nav-panel__link">Start</a>
+                <a href="o-nas.html" class="mobile-nav-panel__link">O nas</a>
+                <details class="mobile-nav-details">
+                    <summary class="mobile-nav-details__summary">Formalności i procedury</summary>
+                    <div class="mobile-nav-details__links">
+                        <a href="jak-zostac-czlonkiem.html" class="mobile-nav-panel__link mobile-nav-panel__link--sub">Jak zostać członkiem?</a>
+<a href="patent-strzelecki.html" class="mobile-nav-panel__link mobile-nav-panel__link--sub">Patent strzelecki</a>
+<a href="licencja-sportowa.html" class="mobile-nav-panel__link mobile-nav-panel__link--sub">Licencja sportowa</a>
+<a href="pozwolenie-na-bron.html" class="mobile-nav-panel__link mobile-nav-panel__link--sub">Pozwolenie na broń</a>
+                    </div>
+                </details>
+                <a href="kontakt.html" class="mobile-nav-panel__link">Kontakt</a>
+            </div>
+        </div>
+    </div>
+</header>
+<main class="sw-page-shell pt-28 pb-20 px-4"><article class="sw-article prose-page page-inner"><h1 class="page-title font-serif sw-page-title--center">Kalendarz</h1><p class="text-stone-600">W podglądzie statycznym ta strona nie jest zbudowana — w WordPressie użyj adresu /kalendarz/.</p></article></main>
+<footer class="site-footer border-t py-20 text-center mt-0">
+    <a href="index.html" class="site-footer__logo-link">
+        <img src="assets/images/logo-sudecka-wataha.png" alt="Strzelecki Klub Sportowy Sudecka Wataha" class="site-footer__logo" width="768" height="768" decoding="async">
+    </a>
+    <div class="site-footer__legal">
+        <p class="site-footer__krs font-serif">KRS 0000634605</p>
+        <p class="site-footer__krs-desc">Zarejestrowani w KRS jako Stowarzyszenie Strzelecki Klub Sportowy Sudecka Wataha — Sąd Rejonowy we Wrocławiu.</p>
+    </div>
+    <p class="site-footer__note text-xs tracking-widest uppercase mb-4">© 2026 · Strzelecki Klub Sportowy Sudecka Wataha · podgląd statyczny</p>
+    <div class="flex flex-wrap justify-center gap-4 md:gap-6 px-4 text-sm">
+        <a href="o-nas.html">O nas</a>
+        <a href="kontakt.html">Kontakt</a>
+    </div>
+</footer>
+<script src="assets/js/theme.js"></script>
+</body>
+</html>

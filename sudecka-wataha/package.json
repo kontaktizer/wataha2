@@ -1,0 +1,14 @@
+{
+  "name": "sudecka-wataha",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Motyw WordPress — Strzelecki Klub Sportowy Sudecka Wataha",
+  "scripts": {
+    "dev": "npx @tailwindcss/cli -i ./src/css/main.css -o ./assets/css/theme.css --watch",
+    "build": "npx @tailwindcss/cli -i ./src/css/main.css -o ./assets/css/theme.css --minify"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.2.2",
+    "tailwindcss": "^4.2.2"
+  }
+}
