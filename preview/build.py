@@ -8,7 +8,7 @@ import shutil
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-THEME_DIR = ROOT.parent / "sudecka-wataha"
+THEME_DIR = ROOT.parent / "wataha2"
 THEME_PARTS = THEME_DIR / "template-parts"
 
 SLUGS = [
@@ -321,7 +321,7 @@ def write_page(slug: str) -> None:
 
 
 def write_index() -> None:
-    idx = ROOT.parent / "sudecka-wataha" / "front-page.php"
+    idx = ROOT.parent / "wataha2" / "front-page.php"
     # uproszczona wersja: kopiujemy strukturę z PHP bez runtime
     body = """
 <main>

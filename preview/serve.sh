@@ -1,8 +1,8 @@
 #!/bin/sh
-# Odbudowuje HTML z motywu (sudecka-wataha/) i uruchamia podgląd w przeglądarce.
+# Odbudowuje HTML z motywu (wataha2/) i uruchamia podglad w przegladarce.
 cd "$(dirname "$0")" || exit 1
-cp ../sudecka-wataha/assets/css/theme.css ./assets/css/
-cp ../sudecka-wataha/assets/js/theme.js ./assets/js/
+cp ../wataha2/assets/css/theme.css ./assets/css/
+cp ../wataha2/assets/js/theme.js ./assets/js/
 python3 build.py
 echo ""
 echo "Podgląd: http://localhost:8765/"

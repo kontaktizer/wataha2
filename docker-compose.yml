@@ -26,7 +26,7 @@ services:
       WORDPRESS_DB_PASSWORD: wordpress
       WORDPRESS_DB_NAME: wordpress
     volumes:
-      - ./sudecka-wataha:/var/www/html/wp-content/themes/sudecka-wataha
+      - ./wataha2:/var/www/html/wp-content/themes/wataha2
     depends_on:
       - db
 
