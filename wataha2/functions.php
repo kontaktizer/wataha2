@@ -17,6 +17,19 @@ if (! defined('ABSPATH')) {
 define('SUDECKA_WATAHA_VER', '1.0.0');
 
 /**
+ * Wersja assetu oparta o mtime pliku, aby przelamywac cache po deployu.
+ */
+function sudecka_wataha_asset_version(string $relative_path): string
+{
+    $full_path = get_template_directory() . $relative_path;
+    if (file_exists($full_path)) {
+        return (string) filemtime($full_path);
+    }
+
+    return SUDECKA_WATAHA_VER;
+}
+
+/**
  * Adres logo klubu (PNG w assets/images).
  */
 function sudecka_wataha_logo_url(): string
@@ -166,21 +179,21 @@ function sudecka_wataha_assets(): void
         'sudecka-wataha',
         get_stylesheet_uri(),
         [],
-        SUDECKA_WATAHA_VER
+        sudecka_wataha_asset_version('/style.css')
     );
 
     wp_enqueue_style(
         'sudecka-wataha-theme',
         get_template_directory_uri() . '/assets/css/theme.css',
         ['sudecka-wataha-fonts', 'sudecka-wataha'],
-        SUDECKA_WATAHA_VER
+        sudecka_wataha_asset_version('/assets/css/theme.css')
     );
 
     wp_enqueue_script(
         'sudecka-wataha-theme',
         get_template_directory_uri() . '/assets/js/theme.js',
         [],
-        SUDECKA_WATAHA_VER,
+        sudecka_wataha_asset_version('/assets/js/theme.js'),
         true
     );
 }
