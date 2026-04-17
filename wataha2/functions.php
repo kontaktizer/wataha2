@@ -200,45 +200,29 @@ function sudecka_wataha_assets(): void
 add_action('wp_enqueue_scripts', 'sudecka_wataha_assets');
 
 /**
- * Po aktywacji motywu: tworzy wymagane strony, ustawia stronę główną jako statyczną
- * i włącza ładne permalinki. Działa tylko raz — nie nadpisuje istniejących stron.
+ * Jednorazowy auto-setup: tworzy wymagane strony, ustawia statyczną stronę główną
+ * i włącza ładne permalinki. Odpala się przy pierwszym odwiedzeniu strony po
+ * instalacji lub aktualizacji przez WP Pusher — nie wymaga ręcznego przełączania motywu.
  */
-function sudecka_wataha_on_activation(): void
+function sudecka_wataha_auto_setup(): void
 {
+    if (get_option('sudecka_wataha_setup_v1')) {
+        return;
+    }
+
     $pages = [
-        'home' => [
-            'title'   => 'Strona główna',
-            'content' => '',
-        ],
-        'o-nas' => [
-            'title'   => 'O nas',
-            'content' => '',
-        ],
-        'jak-zostac-czlonkiem' => [
-            'title'   => 'Jak zostać członkiem?',
-            'content' => '',
-        ],
-        'patent-strzelecki' => [
-            'title'   => 'Patent strzelecki',
-            'content' => '',
-        ],
-        'licencja-sportowa' => [
-            'title'   => 'Licencja sportowa',
-            'content' => '',
-        ],
-        'pozwolenie-na-bron' => [
-            'title'   => 'Pozwolenie na broń',
-            'content' => '',
-        ],
-        'kontakt' => [
-            'title'   => 'Kontakt',
-            'content' => '',
-        ],
+        'home'                  => 'Strona główna',
+        'o-nas'                 => 'O nas',
+        'jak-zostac-czlonkiem'  => 'Jak zostać członkiem?',
+        'patent-strzelecki'     => 'Patent strzelecki',
+        'licencja-sportowa'     => 'Licencja sportowa',
+        'pozwolenie-na-bron'    => 'Pozwolenie na broń',
+        'kontakt'               => 'Kontakt',
     ];
 
     $home_id = 0;
 
-    foreach ($pages as $slug => $data) {
+    foreach ($pages as $slug => $title) {
         $existing = get_page_by_path($slug);
         if ($existing) {
             if ($slug === 'home') {
@@ -248,9 +232,9 @@ function sudecka_wataha_on_activation(): void
         }
 
         $id = wp_insert_post([
-            'post_title'   => $data['title'],
+            'post_title'   => $title,
             'post_name'    => $slug,
-            'post_content' => $data['content'],
+            'post_content' => '',
             'post_status'  => 'publish',
             'post_type'    => 'page',
             'post_author'  => 1,
@@ -266,13 +250,15 @@ function sudecka_wataha_on_activation(): void
         update_option('page_on_front', $home_id);
     }
 
-    // Włącz ładne permalinki /%postname%/ jeśli jeszcze nie ustawione.
     if ('' === get_option('permalink_structure')) {
         update_option('permalink_structure', '/%postname%/');
-        flush_rewrite_rules();
     }
+
+    flush_rewrite_rules();
+
+    update_option('sudecka_wataha_setup_v1', '1');
 }
-add_action('after_switch_theme', 'sudecka_wataha_on_activation');
+add_action('init', 'sudecka_wataha_auto_setup');
 
 /**
  * @param bool $active Czy link jest bieżącą sekcją.
