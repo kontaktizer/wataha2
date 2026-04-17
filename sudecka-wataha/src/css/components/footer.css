@@ -1,0 +1,181 @@
+@layer components {
+    .krs-band {
+        background: linear-gradient(180deg, var(--color-forest-800) 0%, var(--color-forest-900) 100%);
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .krs-band__title {
+        color: var(--color-mist-100);
+        letter-spacing: 0.2em;
+    }
+
+    .krs-band__text {
+        color: var(--color-stone-400);
+    }
+
+    .home-contact-cta__eyebrow {
+        font-size: 0.65rem;
+        font-weight: 600;
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
+        color: rgba(253, 164, 175, 0.95);
+        margin: 0 0 1rem;
+    }
+
+    .home-contact-cta .krs-band__text {
+        color: rgba(226, 232, 240, 0.9);
+    }
+
+    .home-contact-cta__btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.85rem 2.25rem;
+        font-size: 0.6875rem;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        text-decoration: none;
+        border-radius: 2px;
+        color: var(--color-forest-900);
+        background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+        transition: background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .home-contact-cta__btn:hover {
+        color: var(--color-accent-crimson);
+        background: #fff;
+        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+    }
+
+    .sw-map-section {
+        background: linear-gradient(180deg, var(--color-mist-50) 0%, var(--color-mist-100) 100%);
+        border-top: 1px solid rgba(55, 65, 81, 0.08);
+    }
+
+    .sw-map-section__title {
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        font-size: clamp(1.15rem, 2.5vw, 1.65rem);
+        font-weight: 700;
+        color: var(--color-forest-900);
+        margin: 0 0 0.65rem;
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+    }
+
+    .sw-map-section__lead {
+        font-size: 0.9375rem;
+        font-weight: 300;
+        line-height: 1.65;
+        color: var(--color-stone-600);
+        margin: 0;
+        text-align: center;
+    }
+
+    .sw-map-frame {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        max-height: 26rem;
+        margin: 0 auto;
+        border-radius: 3px;
+        overflow: hidden;
+        border: 1px solid rgba(55, 65, 81, 0.12);
+        box-shadow: 0 14px 42px rgba(31, 41, 55, 0.1), 0 1px 0 rgba(255, 255, 255, 0.75) inset;
+        background: var(--color-mist-200);
+    }
+
+    .sw-map-frame iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+
+    .sw-map-section__link {
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--color-accent-crimson);
+        text-decoration: none;
+        border-bottom: 1px solid rgba(190, 18, 60, 0.35);
+        padding-bottom: 0.12rem;
+        transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .sw-map-section__link:hover {
+        color: var(--color-accent-red-hover);
+        border-bottom-color: rgba(190, 18, 60, 0.55);
+    }
+
+    .site-footer {
+        background: var(--color-mist-200);
+        border-color: rgba(55, 65, 81, 0.12);
+    }
+
+    .site-footer__logo-link {
+        display: inline-block;
+        line-height: 0;
+        margin-bottom: 1rem;
+    }
+
+    .site-footer__logo {
+        height: 4.75rem;
+        width: auto;
+        aspect-ratio: 1;
+        max-width: min(100%, 11rem);
+        margin-left: auto;
+        margin-right: auto;
+        object-fit: contain;
+        border-radius: 50%;
+        box-shadow: 0 4px 14px rgba(31, 41, 55, 0.12);
+        transition: opacity 0.2s ease;
+    }
+
+    .site-footer__logo-link:hover .site-footer__logo {
+        opacity: 0.88;
+    }
+
+    .site-footer__legal {
+        max-width: 26rem;
+        margin: 0 auto 1.35rem;
+        padding: 0 1rem;
+    }
+
+    .site-footer__krs {
+        font-size: 1.05rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        color: var(--color-forest-800);
+        margin: 0 0 0.45rem;
+    }
+
+    .site-footer__krs-desc {
+        font-size: 0.75rem;
+        font-weight: 300;
+        line-height: 1.55;
+        color: var(--color-stone-500);
+        margin: 0;
+    }
+
+    .site-footer__note {
+        color: var(--color-stone-500);
+        max-width: 28rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .site-footer a {
+        color: var(--color-stone-600);
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+
+    .site-footer a:hover {
+        color: var(--color-accent-crimson);
+    }
+}

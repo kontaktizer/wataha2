@@ -6,7 +6,7 @@ if (! defined('ABSPATH')) {
 $patent_portal = 'https://patentstrzelecki.eu/';
 $kalendarz_url = home_url('/kalendarz/');
 ?>
-<article class="sw-article prose-page page-inner">
+<article class="sw-article sw-article--about prose-page page-inner">
     <header class="sw-page-head">
         <div class="sw-page-head__text">
             <p class="sw-eyebrow"><?php esc_html_e('Formalności', 'sudecka-wataha'); ?></p>

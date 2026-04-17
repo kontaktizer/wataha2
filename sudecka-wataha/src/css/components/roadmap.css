@@ -1,0 +1,243 @@
+@layer components {
+    .sw-roadmap {
+        margin-top: 1.35rem;
+    }
+
+    .sw-roadmap__switch {
+        display: inline-flex;
+        flex-wrap: wrap;
+        gap: 0.35rem;
+        padding: 0.36rem;
+        background: rgba(31, 41, 55, 0.08);
+        border: 1px solid rgba(55, 65, 81, 0.14);
+        border-radius: 999px;
+        margin-bottom: 1.25rem;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    }
+
+    .sw-roadmap__tab {
+        appearance: none;
+        border: 1px solid transparent;
+        background: transparent;
+        color: var(--color-forest-800);
+        font-family: inherit;
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        padding: 0.62rem 1.05rem;
+        border-radius: 999px;
+        cursor: pointer;
+        transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .sw-roadmap__tab:hover {
+        background: rgba(255, 255, 255, 0.82);
+        transform: translateY(-1px);
+    }
+
+    .sw-roadmap__tab.is-active {
+        color: #fff;
+        border-color: rgba(248, 250, 252, 0.18);
+        background: linear-gradient(180deg, var(--color-accent-red) 0%, var(--color-accent-crimson) 100%);
+        box-shadow: 0 10px 24px rgba(190, 18, 60, 0.34);
+    }
+
+    .sw-roadmap__tab:focus-visible {
+        outline: 2px solid rgba(251, 113, 133, 0.65);
+        outline-offset: 2px;
+    }
+
+    .sw-roadmap__panel {
+        position: relative;
+        padding: 1.1rem 1rem 1.1rem;
+        border-radius: 4px;
+        border: 1px solid rgba(55, 65, 81, 0.12);
+        border-left: 4px solid var(--color-accent-crimson);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.93) 0%, rgba(248, 250, 252, 0.9) 100%);
+        box-shadow: 0 14px 34px rgba(31, 41, 55, 0.08);
+        overflow: hidden;
+    }
+
+    .sw-roadmap__panel::before {
+        content: '';
+        position: absolute;
+        left: 1.05rem;
+        top: 1rem;
+        bottom: 1.2rem;
+        width: 2px;
+        background: linear-gradient(180deg, rgba(55, 65, 81, 0.45) 0%, rgba(55, 65, 81, 0.08) 100%);
+        pointer-events: none;
+    }
+
+    .sw-roadmap__panel.is-active {
+        animation: swRoadmapFade 220ms ease-out;
+    }
+
+    .sw-roadmap__steps {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 0.68rem;
+        counter-reset: roadmap-step;
+    }
+
+    .sw-roadmap__steps > li {
+        position: relative;
+        counter-increment: roadmap-step;
+        padding: 0.86rem 0.8rem 0.88rem 2.75rem;
+        border: 1px solid rgba(55, 65, 81, 0.16);
+        border-radius: 4px;
+        background: linear-gradient(132deg, rgba(255, 255, 255, 0.96) 0%, rgba(248, 250, 252, 0.9) 100%);
+        box-shadow: 0 8px 18px rgba(31, 41, 55, 0.06);
+        transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .sw-roadmap__steps > li:hover {
+        transform: translateY(-1px) translateX(2px);
+        border-color: rgba(190, 18, 60, 0.3);
+        box-shadow: 0 12px 24px rgba(31, 41, 55, 0.09);
+    }
+
+    .sw-roadmap__steps > li::before {
+        content: counter(roadmap-step);
+        position: absolute;
+        left: 0.58rem;
+        top: 0.82rem;
+        width: 1.48rem;
+        height: 1.48rem;
+        border-radius: 999px;
+        font-size: 0.64rem;
+        font-weight: 800;
+        line-height: 1.48rem;
+        text-align: center;
+        color: #fff;
+        box-shadow: 0 8px 14px rgba(31, 41, 55, 0.22);
+    }
+
+    .sw-roadmap__panel[data-roadmap-panel='sport'] .sw-roadmap__steps > li::before {
+        background: linear-gradient(180deg, #15803d 0%, #14532d 100%);
+    }
+
+    .sw-roadmap__panel[data-roadmap-panel='kolekcja'] .sw-roadmap__steps > li::before {
+        background: linear-gradient(180deg, #dc2626 0%, #7f1d1d 100%);
+    }
+
+    .sw-roadmap__step-title {
+        display: block;
+        font-size: 0.91rem;
+        font-weight: 600;
+        line-height: 1.42;
+        color: var(--color-forest-900);
+    }
+
+    .sw-roadmap__step-note {
+        display: block;
+        margin-top: 0.12rem;
+        font-size: 0.8rem;
+        font-weight: 300;
+        line-height: 1.42;
+        color: var(--color-stone-500);
+    }
+
+    .sw-roadmap__highlight {
+        margin: 1rem 0 0;
+        padding: 0.82rem 0.95rem;
+        border-radius: 4px;
+        border: 1px solid rgba(34, 197, 94, 0.36);
+        background: rgba(34, 197, 94, 0.11);
+        color: var(--color-forest-800);
+        font-size: 0.84rem;
+        line-height: 1.48;
+    }
+
+    .sw-roadmap__highlight--warn {
+        border-color: rgba(251, 113, 133, 0.42);
+        background: rgba(220, 38, 38, 0.08);
+        color: var(--color-forest-800);
+    }
+
+    .sw-roadmap-summary {
+        margin-top: 2rem;
+        display: grid;
+        gap: 0.85rem;
+    }
+
+    .sw-roadmap-summary__card {
+        border: 1px solid rgba(55, 65, 81, 0.1);
+        border-radius: 0.75rem;
+        padding: 1rem 1.15rem;
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+    }
+
+    .sw-roadmap-summary__card h4 {
+        margin: 0 0 0.5rem;
+        font-size: 0.82rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+    }
+
+    .sw-roadmap-summary__card ul {
+        margin: 0;
+        padding-left: 1rem;
+    }
+
+    .sw-roadmap-summary__card li {
+        margin-bottom: 0.3rem;
+        font-size: 0.81rem;
+        line-height: 1.45;
+        color: var(--color-stone-600);
+    }
+
+    .sw-roadmap-summary__card li:last-child {
+        margin-bottom: 0;
+    }
+
+    .sw-roadmap-summary__card--sport h4 {
+        color: var(--color-forest-700);
+    }
+
+    .sw-roadmap-summary__card--kolekcja h4 {
+        color: var(--color-accent-red);
+    }
+
+    .sw-roadmap-summary__note {
+        margin: 0.85rem 0 0;
+        font-size: 0.76rem;
+        color: var(--color-stone-500);
+    }
+}
+
+@keyframes swRoadmapFade {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (min-width: 768px) {
+    .sw-roadmap__panel {
+        padding: 1.25rem 1rem 1.2rem;
+    }
+
+    .sw-roadmap__panel::before {
+        left: 50%;
+        transform: translateX(-1px);
+        top: 1.2rem;
+        bottom: 1.6rem;
+    }
+
+    .sw-roadmap__steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.75rem 0.95rem;
+    }
+
+    .sw-roadmap__steps > li:nth-child(odd) {
+        margin-right: 0.55rem;
+    }
+
+    .sw-roadmap__steps > li:nth-child(even) {
+        margin-left: 0.55rem;
+    }
+}

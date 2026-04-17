@@ -1,0 +1,42 @@
+@layer base {
+    :root {
+        --accent-soft: rgba(190, 18, 60, 0.12);
+        --wolf-iris-ice: #81d4fa;
+        --wolf-iris-glow: #4fc3f7;
+        --wolf-iris-vivid: #00b0ff;
+        --wolf-iris-depth: #0288d1;
+        --wolf-iris-navy: #01579b;
+        --wolf-pupil: #030507;
+        --wolf-pupil-ring: #0d2137;
+        --wolf-eye: var(--wolf-iris-vivid);
+        --wolf-eye-bright: var(--wolf-iris-ice);
+        --wolf-gold: var(--wolf-iris-glow);
+    }
+
+    body.sudecka-wataha {
+        background: linear-gradient(180deg, var(--color-mist-100) 0%, var(--color-mist-200) 45%, var(--color-mist-300) 100%);
+        color: var(--color-forest-800);
+        font-family: 'Inter', sans-serif;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+    }
+
+    body.sudecka-wataha h1,
+    body.sudecka-wataha h2,
+    body.sudecka-wataha h3 {
+        font-family: 'Cinzel', serif;
+    }
+
+    body.sudecka-wataha ::-webkit-scrollbar {
+        width: 5px;
+    }
+    body.sudecka-wataha ::-webkit-scrollbar-track {
+        background: var(--color-mist-200);
+    }
+    body.sudecka-wataha ::-webkit-scrollbar-thumb {
+        background: var(--color-stone-400);
+    }
+    body.sudecka-wataha ::-webkit-scrollbar-thumb:hover {
+        background: var(--color-accent-crimson);
+    }
+}

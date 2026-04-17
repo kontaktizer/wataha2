@@ -155,8 +155,6 @@ add_action('after_setup_theme', 'sudecka_wataha_setup');
  */
 function sudecka_wataha_assets(): void
 {
-    wp_enqueue_script('tailwind-cdn', 'https://cdn.tailwindcss.com', [], null, false);
-
     wp_enqueue_style(
         'sudecka-wataha-fonts',
         'https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap',
@@ -174,7 +172,7 @@ function sudecka_wataha_assets(): void
     wp_enqueue_style(
         'sudecka-wataha-theme',
         get_template_directory_uri() . '/assets/css/theme.css',
-        ['sudecka-wataha'],
+        ['sudecka-wataha-fonts', 'sudecka-wataha'],
         SUDECKA_WATAHA_VER
     );
 

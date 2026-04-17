@@ -1,0 +1,196 @@
+@layer components {
+    .wolf-eye-container {
+        position: relative;
+        z-index: 10;
+        width: 300px;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .wolf-eye {
+        width: 82px;
+        height: 48px;
+        border-radius: 0;
+        position: relative;
+        overflow: hidden;
+        transform-origin: center center;
+        --wolf-top-glare-x: 50%;
+        --wolf-hot-x: 72%;
+        --wolf-hot-y: 36%;
+        --wolf-cool-x: 28%;
+        --wolf-cool-y: 56%;
+        --wolf-deep-x: 58%;
+        --wolf-deep-y: 58%;
+        --wolf-core-x: 48%;
+        --wolf-core-y: 52%;
+        --wolf-limb-x: 50%;
+        --wolf-limb-y: 50%;
+        background:
+            radial-gradient(ellipse 108% 92% at var(--wolf-top-glare-x) 0%, rgba(255, 255, 255, 0.58) 0%, rgba(255, 255, 255, 0.09) 38%, transparent 58%),
+            radial-gradient(ellipse 38% 50% at var(--wolf-hot-x) var(--wolf-hot-y), rgba(224, 247, 250, 0.84) 0%, transparent 70%),
+            radial-gradient(ellipse 30% 42% at var(--wolf-cool-x) var(--wolf-cool-y), rgba(0, 176, 255, 0.34) 0%, transparent 48%),
+            radial-gradient(ellipse 34% 44% at var(--wolf-deep-x) var(--wolf-deep-y), rgba(1, 87, 155, 0.44) 0%, transparent 52%),
+            radial-gradient(ellipse 100% 98% at var(--wolf-core-x) var(--wolf-core-y), var(--wolf-iris-ice) 0%, var(--wolf-iris-glow) 17%, var(--wolf-iris-vivid) 37%, var(--wolf-iris-depth) 61%, var(--wolf-iris-navy) 88%, #013f63 100%);
+        filter: drop-shadow(0 0 5px rgba(79, 195, 247, 0.45)) drop-shadow(0 0 14px rgba(1, 87, 155, 0.28));
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14), inset 0 -5px 12px rgba(1, 87, 155, 0.35);
+    }
+
+    .wolf-eye::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(ellipse 86% 76% at var(--wolf-limb-x) var(--wolf-limb-y), transparent 0%, transparent 56%, rgba(1, 40, 66, 0.48) 100%);
+        opacity: 0.85;
+        pointer-events: none;
+    }
+
+    .wolf-eye::after {
+        content: '';
+        position: absolute;
+        width: 44%;
+        height: 52%;
+        border-radius: 50%;
+        background: linear-gradient(148deg, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0.12) 40%, transparent 68%);
+        pointer-events: none;
+    }
+
+    .wolf-eye--left::after {
+        left: 6%;
+        top: 0;
+        transform: rotate(-22deg);
+    }
+
+    .wolf-eye--right::after {
+        left: auto;
+        right: 6%;
+        top: 0;
+        transform: rotate(22deg);
+    }
+
+    .wolf-eye--left {
+        --wolf-top-glare-x: 18%;
+        --wolf-hot-x: 38%;
+        --wolf-hot-y: 32%;
+        --wolf-cool-x: 18%;
+        --wolf-cool-y: 54%;
+        --wolf-deep-x: 46%;
+        --wolf-deep-y: 56%;
+        --wolf-core-x: 40%;
+        --wolf-core-y: 50%;
+        --wolf-limb-x: 40%;
+        --wolf-limb-y: 50%;
+        clip-path: polygon(
+            11% 2%,
+            4% 28%,
+            0% 50%,
+            5% 70%,
+            46% 95%,
+            91% 74%,
+            99% 44%,
+            96% 26%,
+            85% 12%,
+            62% 7%,
+            36% 4%
+        );
+        transform: rotate(-2.5deg);
+        animation: sw-blink-left 8s ease-in-out infinite;
+    }
+
+    .wolf-eye--right {
+        margin-left: 22px;
+        --wolf-top-glare-x: 82%;
+        --wolf-hot-x: 62%;
+        --wolf-hot-y: 32%;
+        --wolf-cool-x: 82%;
+        --wolf-cool-y: 54%;
+        --wolf-deep-x: 54%;
+        --wolf-deep-y: 56%;
+        --wolf-core-x: 60%;
+        --wolf-core-y: 50%;
+        --wolf-limb-x: 60%;
+        --wolf-limb-y: 50%;
+        clip-path: polygon(
+            89% 2%,
+            96% 28%,
+            100% 50%,
+            95% 70%,
+            54% 95%,
+            9% 74%,
+            1% 44%,
+            4% 26%,
+            15% 12%,
+            38% 7%,
+            64% 4%
+        );
+        transform: rotate(2.5deg);
+        animation: sw-blink-right 8s ease-in-out infinite;
+    }
+
+    .wolf-pupil {
+        position: absolute;
+        width: 15px;
+        height: 14px;
+        left: 50%;
+        top: 51%;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        border-radius: 50%;
+        background: radial-gradient(ellipse 78% 72% at 40% 42%, #1e3a5f 0%, var(--wolf-pupil) 38%, #000 100%);
+        box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.12), inset 0 -2px 4px rgba(0, 0, 0, 0.85), 0 0 5px rgba(0, 0, 0, 0.95),
+            0 0 1px 0.5px var(--wolf-pupil-ring);
+    }
+
+    .wolf-pupil::after {
+        content: '';
+        position: absolute;
+        width: 2px;
+        height: 52%;
+        right: 16%;
+        top: 12%;
+        border-radius: 1px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.88) 0%, rgba(255, 255, 255, 0.2) 55%, transparent 100%);
+        opacity: 0.75;
+        pointer-events: none;
+    }
+
+    .wolf-eye--left .wolf-pupil {
+        left: 54%;
+    }
+
+    .wolf-eye--right .wolf-pupil {
+        left: 46%;
+    }
+
+    .wolf-eye--right .wolf-pupil::after {
+        right: auto;
+        left: 16%;
+    }
+}
+
+@keyframes sw-blink-left {
+    0%,
+    88%,
+    100% {
+        transform: rotate(-2.5deg) scaleY(1);
+        opacity: 1;
+    }
+    94% {
+        transform: rotate(-2.5deg) scaleY(0.09);
+        opacity: 0.85;
+    }
+}
+
+@keyframes sw-blink-right {
+    0%,
+    88%,
+    100% {
+        transform: rotate(2.5deg) scaleY(1);
+        opacity: 1;
+    }
+    94% {
+        transform: rotate(2.5deg) scaleY(0.09);
+        opacity: 0.85;
+    }
+}

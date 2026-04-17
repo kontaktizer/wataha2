@@ -2,7 +2,6 @@
 node_modules/
 
 # Build output (regenerated via npm run build)
-sudecka-wataha/assets/css/theme.css
 
 # OS files
 .DS_Store

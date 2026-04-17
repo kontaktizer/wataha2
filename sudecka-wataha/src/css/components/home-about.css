@@ -1,0 +1,156 @@
+@layer components {
+    .home-about {
+        position: relative;
+        isolation: isolate;
+        background: linear-gradient(180deg, rgba(248, 250, 252, 0.98) 0%, rgba(255, 255, 255, 0.35) 50%, rgba(248, 250, 252, 0.25) 100%);
+    }
+
+    .home-about__glow {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(ellipse 72% 48% at 18% 12%, rgba(190, 18, 60, 0.055), transparent 58%),
+            radial-gradient(ellipse 48% 42% at 92% 88%, rgba(31, 41, 55, 0.055), transparent 52%),
+            repeating-linear-gradient(17deg, transparent, transparent 56px, rgba(31, 41, 55, 0.028) 56px, rgba(31, 41, 55, 0.028) 57px);
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .home-about__grid {
+        display: grid;
+        gap: 2.5rem;
+        align-items: start;
+    }
+
+    .home-about__main {
+        text-align: left;
+    }
+
+    .home-about__p {
+        color: var(--color-stone-600);
+        font-weight: 300;
+        line-height: 1.75;
+        font-size: 0.9375rem;
+        margin: 0 0 1rem;
+    }
+
+    .home-about__highlights {
+        list-style: none;
+        padding: 0;
+        margin: 1.5rem 0 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.85rem;
+    }
+
+    .home-about__highlights li {
+        position: relative;
+        padding-left: 1.35rem;
+        color: var(--color-stone-600);
+        font-weight: 300;
+        font-size: 0.9rem;
+        line-height: 1.62;
+    }
+
+    .home-about__highlights li::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0.55em;
+        width: 6px;
+        height: 6px;
+        background: var(--color-accent-crimson);
+        transform: rotate(45deg);
+        box-shadow: 0 0 0 1px rgba(190, 18, 60, 0.25);
+    }
+
+    .home-about__card {
+        background: linear-gradient(165deg, rgba(255, 255, 255, 0.92) 0%, rgba(241, 245, 249, 0.9) 48%, rgba(255, 255, 255, 0.88) 100%);
+        border: 1px solid rgba(55, 65, 81, 0.1);
+        border-left: 4px solid var(--color-forest-700);
+        border-radius: 3px;
+        padding: 1.75rem 1.5rem 1.85rem;
+        box-shadow: 0 14px 40px rgba(31, 41, 55, 0.07), 0 1px 0 rgba(255, 255, 255, 0.85) inset;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .home-about__card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 8.5rem;
+        height: 8.5rem;
+        background: radial-gradient(circle at 100% 0%, rgba(31, 41, 55, 0.065), transparent 68%);
+        pointer-events: none;
+    }
+
+    .home-about__mark {
+        width: 4.35rem;
+        height: auto;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        display: block;
+        margin: 0 auto 1rem;
+        box-shadow: 0 4px 16px rgba(31, 41, 55, 0.12);
+        position: relative;
+        z-index: 1;
+    }
+
+    .home-about__card-kicker {
+        font-size: 0.65rem;
+        font-weight: 600;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--color-accent-crimson);
+        margin: 0 0 0.65rem;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+    }
+
+    .home-about__card-text {
+        font-size: 0.875rem;
+        font-weight: 300;
+        line-height: 1.65;
+        color: var(--color-stone-600);
+        margin: 0 0 1.35rem;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+    }
+
+    .home-about__card-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 0.65rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    .home-about .hero__btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .home-about .hero__btn--outline {
+        border: 1px solid rgba(55, 65, 81, 0.22);
+        color: var(--color-forest-800);
+        background: rgba(255, 255, 255, 0.88);
+        backdrop-filter: none;
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9) inset;
+    }
+
+    .home-about .hero__btn--outline:hover {
+        background: rgba(241, 245, 249, 0.95);
+        border-color: rgba(190, 18, 60, 0.35);
+        color: var(--color-accent-crimson);
+    }
+}
+
+@media (min-width: 1024px) {
+    .home-about__grid {
+        grid-template-columns: minmax(0, 1.12fr) minmax(260px, 0.88fr);
+        gap: 3rem;
+    }
+}

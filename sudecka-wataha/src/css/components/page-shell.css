@@ -1,0 +1,189 @@
+@layer components {
+    .sw-page-shell {
+        position: relative;
+        background: linear-gradient(180deg, var(--color-mist-50) 0%, var(--color-mist-200) 48%, var(--color-mist-100) 100%);
+    }
+
+    .sw-page-shell::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: repeating-linear-gradient(
+            -14deg,
+            transparent,
+            transparent 64px,
+            rgba(31, 41, 55, 0.025) 64px,
+            rgba(31, 41, 55, 0.025) 65px
+        );
+        opacity: 0.85;
+    }
+
+    .sw-page-shell > * {
+        position: relative;
+        z-index: 1;
+    }
+
+    .sw-article {
+        max-width: 48rem;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 2.5rem;
+    }
+
+    .sw-article--wide {
+        max-width: 56rem;
+    }
+
+    .sw-article--wide.prose-page {
+        max-width: 56rem;
+    }
+
+    .sw-article--about,
+    .sw-article--about.prose-page {
+        max-width: min(72rem, 94vw);
+    }
+
+    .sw-about-columns {
+        display: grid;
+        gap: 1.5rem;
+    }
+
+    .sw-about-col p:first-child {
+        margin-top: 0;
+    }
+
+    .sw-about-col p:last-child {
+        margin-bottom: 0;
+    }
+
+    .sw-about-history {
+        display: grid;
+        gap: 1.5rem;
+        margin-bottom: 1.75rem;
+        align-items: start;
+    }
+
+    .sw-about-history__text {
+        margin-bottom: 0;
+    }
+
+    .sw-about-history__photo {
+        margin: 0;
+    }
+
+    .sw-about-history__photo .sw-media__frame {
+        max-width: none;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .sw-page-head {
+        display: grid;
+        gap: 1.75rem;
+        margin-bottom: 2.75rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid rgba(55, 65, 81, 0.12);
+        align-items: start;
+        position: relative;
+    }
+
+    .sw-page-head::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        width: min(12rem, 45%);
+        height: 2px;
+        background: linear-gradient(90deg, var(--color-accent-crimson), rgba(190, 18, 60, 0.15));
+        border-radius: 1px;
+    }
+
+    .sw-page-head .page-title {
+        text-align: left;
+        margin-bottom: 0.85rem;
+        letter-spacing: 0.06em;
+        font-size: clamp(1.65rem, 3.2vw, 2.25rem);
+        line-height: 1.15;
+    }
+
+    .sw-page-title--center {
+        text-align: center;
+    }
+
+    .sw-eyebrow {
+        font-size: 0.65rem;
+        font-weight: 600;
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        color: var(--color-accent-crimson);
+        margin: 0 0 0.5rem;
+    }
+
+    .sw-lead {
+        font-size: 1.08rem;
+        line-height: 1.7;
+        color: var(--color-stone-600);
+        font-weight: 300;
+        margin: 0;
+        padding-left: 1rem;
+        border-left: 3px solid rgba(190, 18, 60, 0.35);
+    }
+
+    .sw-split {
+        display: grid;
+        gap: 1.25rem;
+    }
+
+    .sw-muted {
+        font-size: 0.875rem;
+        color: var(--color-stone-500);
+    }
+
+    .sw-callout {
+        margin-top: 1.5rem;
+        padding: 1.15rem 1.2rem 1.2rem;
+        background: linear-gradient(180deg, rgba(31, 41, 55, 0.05) 0%, rgba(31, 41, 55, 0.03) 100%);
+        border: 1px solid rgba(55, 65, 81, 0.11);
+        border-left: 3px solid var(--color-forest-700);
+        border-radius: 2px;
+    }
+}
+
+@media (min-width: 1100px) {
+    .sw-page-head--about {
+        grid-template-columns: minmax(0, 1fr) minmax(280px, 44%);
+        gap: 2.5rem;
+        align-items: center;
+    }
+}
+
+@media (min-width: 900px) {
+    .sw-about-columns {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2rem 2.5rem;
+        align-items: start;
+    }
+
+    .sw-about-history {
+        grid-template-columns: minmax(0, 1.15fr) minmax(200px, min(36vw, 22rem));
+        gap: 1.75rem 2.25rem;
+    }
+
+    .sw-page-head {
+        grid-template-columns: minmax(0, 1fr) minmax(220px, 38%);
+        gap: 2rem;
+    }
+
+    .sw-page-head .sw-media {
+        margin-top: 0.35rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .sw-split--media-end {
+        grid-template-columns: minmax(0, 1fr) minmax(200px, 34%);
+        align-items: start;
+    }
+}

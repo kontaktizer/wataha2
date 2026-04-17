@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@source "../../**/*.php";
+@source "../../../preview/**/*.html";
+
+@theme {
+    --color-mist-50: #f8fafc;
+    --color-mist-100: #f2f4f7;
+    --color-mist-200: #e5e7eb;
+    --color-mist-300: #d1d5db;
+
+    --color-forest-900: #111827;
+    --color-forest-800: #1f2937;
+    --color-forest-700: #374151;
+
+    --color-stone-600: #4b5563;
+    --color-stone-500: #6b7280;
+    --color-stone-400: #9ca3af;
+
+    --color-accent-crimson: #be123c;
+    --color-accent-red: #e11d48;
+    --color-accent-red-hover: #f43f5e;
+
+    --font-sans: 'Inter', sans-serif;
+    --font-serif: 'Cinzel', serif;
+}
+
+/* Base */
+@import "./base/typography.css";
+
+/* Components */
+@import "./components/hero.css";
+@import "./components/wolf-eyes.css";
+@import "./components/nav.css";
+@import "./components/pack-grid.css";
+@import "./components/home-about.css";
+@import "./components/page-shell.css";
+@import "./components/section-card.css";
+@import "./components/roadmap.css";
+@import "./components/timeline.css";
+@import "./components/accordion.css";
+@import "./components/contact-form.css";
+@import "./components/media-placeholder.css";
+@import "./components/prose.css";
+@import "./components/footer.css";
+
+/* Utilities */
+@import "./utilities/reveal.css";

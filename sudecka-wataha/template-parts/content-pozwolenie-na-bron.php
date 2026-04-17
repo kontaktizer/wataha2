@@ -7,7 +7,7 @@ $fia_info = 'https://www.fia.com.pl/';
 $nts_przepisy = 'http://www.towarzystwostrzeleckie.org/przepisy-formalno-prawne/';
 $nts_egzamin = 'http://www.towarzystwostrzeleckie.org/egzamin-na-pozwolenie-kolekcjonerskie/';
 ?>
-<article class="sw-article sw-article--wide prose-page page-inner">
+<article class="sw-article sw-article--about prose-page page-inner">
     <header class="sw-page-head">
         <div class="sw-page-head__text">
             <p class="sw-eyebrow"><?php esc_html_e('Formalności', 'sudecka-wataha'); ?></p>
@@ -27,7 +27,7 @@ $nts_egzamin = 'http://www.towarzystwostrzeleckie.org/egzamin-na-pozwolenie-kole
         <h2><?php esc_html_e('Roadmapa: krok po kroku', 'sudecka-wataha'); ?></h2>
         <p><?php esc_html_e('Dwie ścieżki prowadzą do pozwolenia na broń. Tam, gdzie się pokrywają — widzisz wspólny krok.', 'sudecka-wataha'); ?></p>
 
-        <div class="sw-timeline" data-timeline>
+        <div class="sw-timeline is-path-sport" data-timeline>
             <div class="sw-timeline__legend" aria-label="<?php esc_attr_e('Legenda', 'sudecka-wataha'); ?>">
                 <span class="sw-timeline__legend-item"><span class="sw-timeline__legend-dot sw-timeline__legend-dot--sport" aria-hidden="true"></span><?php esc_html_e('Ścieżka sportowa', 'sudecka-wataha'); ?></span>
                 <span class="sw-timeline__legend-item"><span class="sw-timeline__legend-dot sw-timeline__legend-dot--kolekcja" aria-hidden="true"></span><?php esc_html_e('Ścieżka kolekcjonerska', 'sudecka-wataha'); ?></span>
@@ -200,43 +200,33 @@ $nts_egzamin = 'http://www.towarzystwostrzeleckie.org/egzamin-na-pozwolenie-kole
                 <span class="sw-accordion__title"><?php esc_html_e('Które pozwolenie na broń jest dla mnie?', 'sudecka-wataha'); ?></span>
             </summary>
             <div class="sw-accordion__body">
-                <div class="overflow-x-auto">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th><?php esc_html_e('Cel sportowy', 'sudecka-wataha'); ?></th>
-                                <th><?php esc_html_e('Cel kolekcjonerski', 'sudecka-wataha'); ?></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <ul class="m-0 pl-4">
-                                        <li><?php esc_html_e('posiadać broń palną', 'sudecka-wataha'); ?></li>
-                                        <li><?php esc_html_e('móc strzelać z niej na strzelnicy', 'sudecka-wataha'); ?></li>
-                                        <li><?php esc_html_e('móc kupować do niej amunicję', 'sudecka-wataha'); ?></li>
-                                        <li><?php esc_html_e('należeć do klubu sportowego', 'sudecka-wataha'); ?></li>
-                                        <li><?php esc_html_e('zdobyć patent i licencję strzelecką', 'sudecka-wataha'); ?></li>
-                                        <li><?php esc_html_e('startować w zawodach strzeleckich i ponosić koszty startów', 'sudecka-wataha'); ?></li>
-                                        <li><?php esc_html_e('odnawiać co roku licencję PZSS', 'sudecka-wataha'); ?></li>
-                                        <li><?php esc_html_e('nieść przy sobie załadowaną broń', 'sudecka-wataha'); ?></li>
-                                        <li><?php esc_html_e('użyczać broń', 'sudecka-wataha'); ?></li>
-                                    </ul>
-                                    <p class="mt-4 mb-0 sw-emphasis"><?php esc_html_e('→ Pozwolenie na broń do celów sportowych jest dla Ciebie.', 'sudecka-wataha'); ?></p>
-                                </td>
-                                <td>
-                                    <ul class="m-0 pl-4">
-                                        <li><?php esc_html_e('posiadać broń palną', 'sudecka-wataha'); ?></li>
-                                        <li><?php esc_html_e('móc strzelać z niej na strzelnicy', 'sudecka-wataha'); ?></li>
-                                        <li><?php esc_html_e('móc kupować do niej amunicję', 'sudecka-wataha'); ?></li>
-                                        <li><?php esc_html_e('posiadać kolekcję broni (dozwolone są wszystkie przewidziane ustawą rodzaje broni cywilnej, karabinki, pistolety i strzelby)', 'sudecka-wataha'); ?></li>
-                                    </ul>
-                                    <p class="mt-4 sw-muted"><?php esc_html_e('Nie czujesz jednak potrzeby: uczestniczenia w zawodach sportowych, corocznego odnawiania licencji, przenoszenia broni z podpiętym magazynkiem, użyczania broni.', 'sudecka-wataha'); ?></p>
-                                    <p class="mt-2 mb-0 sw-emphasis"><?php esc_html_e('→ Pozwolenie na broń do celów kolekcjonerskich jest dla Ciebie.', 'sudecka-wataha'); ?></p>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="sw-compare">
+                    <div class="sw-compare__col sw-compare__col--sport">
+                        <h4 class="sw-compare__heading"><?php esc_html_e('Cel sportowy', 'sudecka-wataha'); ?></h4>
+                        <ul>
+                            <li><?php esc_html_e('posiadać broń palną', 'sudecka-wataha'); ?></li>
+                            <li><?php esc_html_e('móc strzelać z niej na strzelnicy', 'sudecka-wataha'); ?></li>
+                            <li><?php esc_html_e('móc kupować do niej amunicję', 'sudecka-wataha'); ?></li>
+                            <li><?php esc_html_e('należeć do klubu sportowego', 'sudecka-wataha'); ?></li>
+                            <li><?php esc_html_e('zdobyć patent i licencję strzelecką', 'sudecka-wataha'); ?></li>
+                            <li><?php esc_html_e('startować w zawodach strzeleckich i ponosić koszty startów', 'sudecka-wataha'); ?></li>
+                            <li><?php esc_html_e('odnawiać co roku licencję PZSS', 'sudecka-wataha'); ?></li>
+                            <li><?php esc_html_e('nieść przy sobie załadowaną broń', 'sudecka-wataha'); ?></li>
+                            <li><?php esc_html_e('użyczać broń', 'sudecka-wataha'); ?></li>
+                        </ul>
+                        <p class="sw-emphasis"><?php esc_html_e('→ Pozwolenie na broń do celów sportowych jest dla Ciebie.', 'sudecka-wataha'); ?></p>
+                    </div>
+                    <div class="sw-compare__col sw-compare__col--kolekcja">
+                        <h4 class="sw-compare__heading"><?php esc_html_e('Cel kolekcjonerski', 'sudecka-wataha'); ?></h4>
+                        <ul>
+                            <li><?php esc_html_e('posiadać broń palną', 'sudecka-wataha'); ?></li>
+                            <li><?php esc_html_e('móc strzelać z niej na strzelnicy', 'sudecka-wataha'); ?></li>
+                            <li><?php esc_html_e('móc kupować do niej amunicję', 'sudecka-wataha'); ?></li>
+                            <li><?php esc_html_e('posiadać kolekcję broni (dozwolone są wszystkie przewidziane ustawą rodzaje broni cywilnej, karabinki, pistolety i strzelby)', 'sudecka-wataha'); ?></li>
+                        </ul>
+                        <p class="sw-muted"><?php esc_html_e('Nie czujesz jednak potrzeby: uczestniczenia w zawodach sportowych, corocznego odnawiania licencji, przenoszenia broni z podpiętym magazynkiem, użyczania broni.', 'sudecka-wataha'); ?></p>
+                        <p class="sw-emphasis"><?php esc_html_e('→ Pozwolenie na broń do celów kolekcjonerskich jest dla Ciebie.', 'sudecka-wataha'); ?></p>
+                    </div>
                 </div>
             </div>
         </details>

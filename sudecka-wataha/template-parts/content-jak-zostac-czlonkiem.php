@@ -8,7 +8,7 @@ $deklaracja_url = 'https://sudeckawataha.pl/wp-content/uploads/2024/03/DEKLARACJ
 $oswiadczenie_url = 'https://sudeckawataha.pl/wp-content/uploads/2024/03/OSWIADCZENIE-NIEKARALNOSC.pdf';
 $strzelnica_url = 'https://strzelnicasudecka.pl/';
 ?>
-<article class="sw-article prose-page page-inner">
+<article class="sw-article sw-article--about prose-page page-inner">
     <header class="sw-page-head">
         <div class="sw-page-head__text">
             <p class="sw-eyebrow"><?php esc_html_e('Członkostwo', 'sudecka-wataha'); ?></p>
