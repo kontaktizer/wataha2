@@ -200,6 +200,81 @@ function sudecka_wataha_assets(): void
 add_action('wp_enqueue_scripts', 'sudecka_wataha_assets');
 
 /**
+ * Po aktywacji motywu: tworzy wymagane strony, ustawia stronę główną jako statyczną
+ * i włącza ładne permalinki. Działa tylko raz — nie nadpisuje istniejących stron.
+ */
+function sudecka_wataha_on_activation(): void
+{
+    $pages = [
+        'home' => [
+            'title'   => 'Strona główna',
+            'content' => '',
+        ],
+        'o-nas' => [
+            'title'   => 'O nas',
+            'content' => '',
+        ],
+        'jak-zostac-czlonkiem' => [
+            'title'   => 'Jak zostać członkiem?',
+            'content' => '',
+        ],
+        'patent-strzelecki' => [
+            'title'   => 'Patent strzelecki',
+            'content' => '',
+        ],
+        'licencja-sportowa' => [
+            'title'   => 'Licencja sportowa',
+            'content' => '',
+        ],
+        'pozwolenie-na-bron' => [
+            'title'   => 'Pozwolenie na broń',
+            'content' => '',
+        ],
+        'kontakt' => [
+            'title'   => 'Kontakt',
+            'content' => '',
+        ],
+    ];
+
+    $home_id = 0;
+
+    foreach ($pages as $slug => $data) {
+        $existing = get_page_by_path($slug);
+        if ($existing) {
+            if ($slug === 'home') {
+                $home_id = (int) $existing->ID;
+            }
+            continue;
+        }
+
+        $id = wp_insert_post([
+            'post_title'   => $data['title'],
+            'post_name'    => $slug,
+            'post_content' => $data['content'],
+            'post_status'  => 'publish',
+            'post_type'    => 'page',
+            'post_author'  => 1,
+        ]);
+
+        if (! is_wp_error($id) && $slug === 'home') {
+            $home_id = $id;
+        }
+    }
+
+    if ($home_id > 0) {
+        update_option('show_on_front', 'page');
+        update_option('page_on_front', $home_id);
+    }
+
+    // Włącz ładne permalinki /%postname%/ jeśli jeszcze nie ustawione.
+    if ('' === get_option('permalink_structure')) {
+        update_option('permalink_structure', '/%postname%/');
+        flush_rewrite_rules();
+    }
+}
+add_action('after_switch_theme', 'sudecka_wataha_on_activation');
+
+/**
  * @param bool $active Czy link jest bieżącą sekcją.
  */
 function sudecka_wataha_nav_link_class(bool $active): string
